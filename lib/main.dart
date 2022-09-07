@@ -1,51 +1,54 @@
 import 'package:flutter/material.dart';
-
+import 'package:gameboy_tetris/Engine/game_engine.dart';
+import 'package:gameboy_tetris/Engine/keyboard.dart';
+import 'package:gameboy_tetris/View/page_portrait.dart';
+import 'package:gameboy_tetris/Material/audios.dart';
 void main() {
-  runApp(const MyApp());
+  _disableDebugPrint();
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+void _disableDebugPrint() {
+  bool debug = false;
+  assert(() {
+    debug = true;
+    return true;
+  }());
+  if (!debug) {
+    debugPrint = (message, {wrapWidth}) {
+      //disable log print when not in debug mode
+    };
+  }
+}
 
+final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
+
+class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GameBoy: Tetris DX',
+      navigatorObservers: [routeObserver],
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        body: Sound(child: Game(child: KeyboardController(child: _HomePage()))),
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+const SCREEN_BORDER_WIDTH = 3.0;
 
-  final String title;
+const BACKGROUND_COLOR = const Color(0xffefcc19);
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    //only Android/iOS support land mode
+    bool land = MediaQuery.of(context).orientation == Orientation.landscape;
+    return land ? PageLand() : PagePortrait();
   }
 }
