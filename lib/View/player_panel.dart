@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gameboy_tetris/material/briks.dart';
-import 'package:gameboy_tetris/material/images.dart';
+import 'package:gameboy_tetris/Material/briks.dart';
+import 'package:gameboy_tetris/Material/images.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 
 const _PLAYER_PANEL_PADDING = 6;

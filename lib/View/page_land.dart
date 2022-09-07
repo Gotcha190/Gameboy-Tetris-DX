@@ -22,7 +22,7 @@ class PageLand extends StatelessWidget {
                     Spacer(),
                     Padding(
                       padding: const EdgeInsets.only(left: 40, bottom: 40),
-                      child: DropButton(),
+                      child: DirectionController(),
                     )
                   ],
                 ),
@@ -32,7 +32,8 @@ class PageLand extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Spacer(),
-                    DirectionController(),
+                    AButton(),
+                    BButton(),
                     SizedBox(height: 30),
                   ],
                 ),
