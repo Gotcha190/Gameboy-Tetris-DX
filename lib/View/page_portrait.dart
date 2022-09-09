@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/main.dart';
-import 'package:gameboy_tetris/View/controller.dart';
+import 'package:gameboy_tetris/Control/MainController.dart';
+import 'package:gameboy_tetris/Control/ABController.dart';
+import 'package:gameboy_tetris/Control/DirectionController.dart';
+import 'package:gameboy_tetris/Control/SystemButtonsController.dart';
 import 'package:gameboy_tetris/View/screen.dart';
 
 part 'page_land.dart';

@@ -32,8 +32,7 @@ class PageLand extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Spacer(),
-                    AButton(),
-                    BButton(),
+                    ABController(),
                     SizedBox(height: 30),
                   ],
                 ),
