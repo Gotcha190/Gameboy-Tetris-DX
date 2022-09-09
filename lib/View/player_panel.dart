@@ -70,9 +70,9 @@ class _GameUninitialized extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             IconDragon(animate: true),
-            SizedBox(height: 16),
+            SizedBox(height: 16), ///Space between Dino and text
             Text(
-              "tetrix",
+              "Gameboy: Tetris DX",
               style: TextStyle(fontSize: 20),
             ),
           ],

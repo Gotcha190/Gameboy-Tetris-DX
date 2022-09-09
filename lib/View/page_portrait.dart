@@ -11,8 +11,8 @@ part 'page_land.dart';
 class PagePortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final screenW = size.width * 0.8;
+    final size = MediaQuery.of(context).size; /// Phone Size
+    final screenW = size.width * 0.7;
 
     return SizedBox.expand(
       child: Container(
@@ -21,9 +21,26 @@ class PagePortrait extends StatelessWidget {
           padding: MediaQuery.of(context).padding,
           child: Column(
             children: <Widget>[
-              Spacer(),
-              _ScreenDecoration(child: Screen(width: screenW)),
-              Spacer(flex: 2),
+              SizedBox(
+                height: ((screenW * 0.6)- 10) * 2  + 45 * 3,
+                width: screenW + 45 * 2 + 8,
+                child: Stack(
+                  alignment: Alignment.topCenter,
+                  fit: StackFit.loose,
+                  children: [
+                    _ScreenDecoration(child: Screen(width: screenW)),
+                    Container(
+                      padding: const EdgeInsets.only(bottom: 20.0),
+                      alignment: Alignment.bottomCenter,
+                      child: Text("GAME BOY",
+                          style: TextStyle(color: Color(0xFF557C7B), fontSize: 25)),
+                    ),
+
+
+                  ],
+                ),
+              ),
+              Spacer(flex: 3),
               GameController(),
             ],
           ),
@@ -46,16 +63,15 @@ class _ScreenDecoration extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(
-              color: const Color(0xFF987f0f), width: SCREEN_BORDER_WIDTH),
-          left: BorderSide(
-              color: const Color(0xFF987f0f), width: SCREEN_BORDER_WIDTH),
-          right: BorderSide(
-              color: const Color(0xFFfae36c), width: SCREEN_BORDER_WIDTH),
-          bottom: BorderSide(
-              color: const Color(0xFFfae36c), width: SCREEN_BORDER_WIDTH),
+          top: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
+          left: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
+          right: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
+          bottom:
+              BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH * 1.5),
         ),
       ),
+
+      ///Display
       child: Container(
         decoration: BoxDecoration(border: Border.all(color: Colors.black54)),
         child: Container(
