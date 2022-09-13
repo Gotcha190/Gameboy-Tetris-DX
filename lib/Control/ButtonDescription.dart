@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
+import 'package:sizer/sizer.dart';
 
 ///show a hint text for child widget
 class Description extends StatelessWidget {
@@ -23,30 +24,30 @@ class Description extends StatelessWidget {
       case AxisDirection.right:
         widget = Row(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[child, SizedBox(width: 8), Text(text)]);
+            children: <Widget>[child, SizedBox(width: 2.w), Text(text)]);
         break;
       case AxisDirection.left:
         widget = Row(
-          children: <Widget>[Text(text), SizedBox(width: 8), child],
+          children: <Widget>[Text(text), SizedBox(width: 2.w), child],
           mainAxisSize: MainAxisSize.min,
         );
         break;
       case AxisDirection.up:
         widget = Column(
-          children: <Widget>[Text(text), SizedBox(height: 8), child],
+          children: <Widget>[Text(text), SizedBox(height: 2.w), child],
           mainAxisSize: MainAxisSize.min,
         );
         break;
       case AxisDirection.down:
         widget = Column(
-          children: <Widget>[child, SizedBox(height: 8), Text(text)],
+          children: <Widget>[child, SizedBox(height: 2.w), Text(text)],
           mainAxisSize: MainAxisSize.min,
         );
         break;
     }
     return DefaultTextStyle(
       child: widget,
-      style: TextStyle(fontSize: 12, color: Colors.black),
+      style: TextStyle(fontSize: 10.sp, color: Colors.black),
     );
   }
 }

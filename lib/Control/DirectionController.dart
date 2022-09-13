@@ -4,6 +4,7 @@ import 'package:gameboy_tetris/Control/RectangleButton.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'dart:math' as math;
+import 'package:sizer/sizer.dart';
 
 class DirectionController extends StatelessWidget {
   @override
@@ -26,7 +27,7 @@ class DirectionController extends StatelessWidget {
                       }),
                   Text("▲",
                       style: TextStyle(
-                          color: Constants.BUTTON_TEXT_COLOR, fontSize: 25)),
+                          color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
                 ]),
               ],
             ),
@@ -38,16 +39,12 @@ class DirectionController extends StatelessWidget {
                   child: Stack(alignment: Alignment.center, children: [
                     Button(
                         size: Constants.DIRECTION_BUTTON_SIZE,
-                        // icon: Icon(
-                        //   CupertinoIcons.play_arrow_solid,
-                        //   color: Color.fromARGB(255, 255, 15, 15),
-                        // ),
                         onTap: () {
                           Game.of(context).left();
                         }),
                     Text("▲",
                         style: TextStyle(
-                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 25)),
+                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
                   ]),
                 ),
                 SizedBox(
@@ -70,7 +67,7 @@ class DirectionController extends StatelessWidget {
                     ),
                     Text("▲",
                         style: TextStyle(
-                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 25)),
+                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
                   ]),
                 ),
               ],
@@ -89,7 +86,7 @@ class DirectionController extends StatelessWidget {
                     ),
                     Text("▲",
                         style: TextStyle(
-                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 25)),
+                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
                   ]),
                 ),
               ],

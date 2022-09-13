@@ -5,13 +5,17 @@ import 'package:gameboy_tetris/Control/ABController.dart';
 import 'package:gameboy_tetris/Control/DirectionController.dart';
 import 'package:gameboy_tetris/Control/SystemButtonsController.dart';
 import 'package:gameboy_tetris/View/screen.dart';
+import 'package:sizer/sizer.dart';
+
+import '../Control/control_constants.dart';
 
 part 'page_land.dart';
 
 class PagePortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size; /// Phone Size
+    final size = MediaQuery.of(context).size;/// Phone Size
+     //final size = Constants.SCREEN_SIZE;
     final screenW = size.width * 0.7;
 
     return SizedBox.expand(
@@ -22,21 +26,19 @@ class PagePortrait extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: ((screenW * 0.6)- 10) * 2  + 45 * 3,
-                width: screenW + 45 * 2 + 8,
+                height: 60.h,//((screenW * 0.6)- 10) * 2  + 45 * 3,
+                width: 100.w, //screenW + 45 * 2 + 8,
                 child: Stack(
                   alignment: Alignment.topCenter,
                   fit: StackFit.loose,
                   children: [
                     _ScreenDecoration(child: Screen(width: screenW)),
                     Container(
-                      padding: const EdgeInsets.only(bottom: 20.0),
+                      padding: EdgeInsets.only(bottom: 3.h),
                       alignment: Alignment.bottomCenter,
                       child: Text("GAME BOY",
-                          style: TextStyle(color: Color(0xFF557C7B), fontSize: 25)),
+                          style: TextStyle(color: Color(0xFF557C7B), fontSize: 8.w)),
                     ),
-
-
                   ],
                 ),
               ),
@@ -75,9 +77,11 @@ class _ScreenDecoration extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(border: Border.all(color: Colors.black54)),
         child: Container(
-          padding: const EdgeInsets.all(3),
-          color: SCREEN_BACKGROUND,
-          child: child,
+          color: Constants.SCREEN_BACKGROUND,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 1.w, horizontal: 1.w),
+            child: child,
+          ),
         ),
       ),
     );

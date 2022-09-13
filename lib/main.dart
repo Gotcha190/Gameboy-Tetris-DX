@@ -3,6 +3,8 @@ import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'package:gameboy_tetris/Engine/keyboard.dart';
 import 'package:gameboy_tetris/View/page_portrait.dart';
 import 'package:gameboy_tetris/Material/audios.dart';
+import 'package:sizer/sizer.dart';
+
 void main() {
   _disableDebugPrint();
   runApp(MyApp());
@@ -27,20 +29,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'GameBoy: Tetris DX',
-      navigatorObservers: [routeObserver],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        body: Sound(child: Game(child: KeyboardController(child: _HomePage()))),
-      ),
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        title: 'GameBoy: Tetris DX',
+        navigatorObservers: [routeObserver],
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          body: Sound(child: Game(child: KeyboardController(child: _HomePage()))),
+        ),
+      );
+    }
     );
   }
 }
 
-const SCREEN_BORDER_WIDTH = 45.0;
+double SCREEN_BORDER_WIDTH = 11.w;
 
 const BACKGROUND_COLOR = const Color(0xff009fd7);
 

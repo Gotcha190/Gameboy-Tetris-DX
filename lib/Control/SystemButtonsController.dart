@@ -3,6 +3,7 @@ import 'package:gameboy_tetris/Control/RoundButton.dart';
 import 'package:gameboy_tetris/Control/ButtonDescription.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
+import 'package:sizer/sizer.dart';
 
 class SystemButtonGroup extends StatelessWidget {
   @override
@@ -21,6 +22,7 @@ class SystemButtonGroup extends StatelessWidget {
                   Game.of(context).soundSwitch();
                 }),
           ),
+          SizedBox(width: 1.w),
           Description(
             text: "PAUSE/RESUME",
             child: Button(
@@ -31,6 +33,7 @@ class SystemButtonGroup extends StatelessWidget {
                   Game.of(context).pauseOrResume();
                 }),
           ),
+          SizedBox(width: 1.w),
           Description(
             text: "RESET",
             child: Button(

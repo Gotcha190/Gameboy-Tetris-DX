@@ -3,6 +3,7 @@ import 'package:gameboy_tetris/Control/RoundButton.dart';
 import 'package:gameboy_tetris/Control/ButtonDescription.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
+import 'package:sizer/sizer.dart';
 
 class ABController extends StatelessWidget {
   @override
@@ -36,12 +37,12 @@ class AButton extends StatelessWidget {
         children: <Widget>[
           Button(
               enableLongPress: false,
-              size: Size(50, 50),
+              size: Size(13.w, 13.w),
               onTap: () {
                 Game.of(context).drop();
               }),
-          const Text('A',
-              style: TextStyle(color: Constants.BUTTON_TEXT_COLOR, fontSize: 25)),
+          Text('A',
+              style: TextStyle(color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
         ],
       ),
     );
@@ -59,13 +60,13 @@ class BButton extends StatelessWidget {
         children: <Widget>[
           Button(
               enableLongPress: false,
-              size: Size(50, 50),
+              size: Size(13.w, 13.w),
               onTap: () {
                 Game.of(context).drop();
               }),
-          const Text('B',
+          Text('B',
               style: TextStyle(
-                  color: Constants.BUTTON_TEXT_COLOR, fontSize: 25))
+                  color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp))
         ],
       ),
     );

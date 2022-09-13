@@ -5,33 +5,36 @@ import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'package:gameboy_tetris/Material/briks.dart';
 import 'package:gameboy_tetris/Material/images.dart';
+import 'package:sizer/sizer.dart';
 
 class StatusPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      height: 50.h,
+      width: 10.w,
+      padding: EdgeInsets.all(1.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text("Points",
-              style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11.sp)),
+          SizedBox(height: 1.h),
           Number(number: GameState.of(context).points),
-          SizedBox(height: 10),
+          SizedBox(height: 1.5.h),
           Text("Cleans",
-              style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11.sp)),
+          SizedBox(height: 1.h),
           Number(number: GameState.of(context).cleared),
-          SizedBox(height: 10),
+          SizedBox(height: 1.5.h),
           Text("Level",
-              style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11.sp)),
+          SizedBox(height: 1.h),
           Number(number: GameState.of(context).level),
-          SizedBox(height: 10),
+          SizedBox(height: 1.5.h),
           Text("Next",
-              style: TextStyle(fontWeight: FontWeight.bold)),
-          SizedBox(height: 4),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11.sp)),
+          SizedBox(height: 1.h),
           _NextBlock(),
           Spacer(),
           _GameStatus(),
@@ -101,16 +104,20 @@ class _GameStatusState extends State<_GameStatus> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        IconSound(enable: GameState.of(context).muted),
-        SizedBox(width: 4),
-        IconPause(enable: GameState.of(context).states == GameStates.paused),
-        Spacer(),
-        Number(number: _hour, length: 2, padWithZero: true),
-        IconColon(enable: _colonEnable),
-        Number(number: _minute, length: 2, padWithZero: true),
-      ],
+    return Container(
+      height: 1.5.h,
+      width: 25.w,
+      child: Row(
+        children: <Widget>[
+          IconSound(enable: GameState.of(context).muted),
+          SizedBox(width: 1.w),
+          IconPause(enable: GameState.of(context).states == GameStates.paused),
+          Spacer(),
+          Number(number: _hour, length: 2, padWithZero: true),
+          IconColon(enable: _colonEnable),
+          Number(number: _minute, length: 2, padWithZero: true),
+        ],
+      ),
     );
   }
 }

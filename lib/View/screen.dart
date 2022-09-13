@@ -3,13 +3,15 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'package:gameboy_tetris/Material/briks.dart';
+import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Material/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:vector_math/vector_math_64.dart' as v;
 
 import 'player_panel.dart';
 import 'status_panel.dart';
 
-const Color SCREEN_BACKGROUND = Color(0xff9ead86);
+
 
 /// screen H : W;
 class Screen extends StatelessWidget {
@@ -26,14 +28,14 @@ class Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //play panel need 60%
-    final playerPanelWidth = width * 0.6;
+    final playerPanelWidth = 43.w;
     return Shake(
       shake: GameState.of(context).states == GameStates.drop,
       child: SizedBox(
         height: (playerPanelWidth - 6) * 2 + 6,
         width: width,
         child: Container(
-          color: SCREEN_BACKGROUND,
+          color: Constants.SCREEN_BACKGROUND,
           child: GameMaterial(
             child: BrikSize(
               size: getBrikSizeForScreenWidth(playerPanelWidth),

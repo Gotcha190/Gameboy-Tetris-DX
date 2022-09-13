@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Material/briks.dart';
 import 'package:gameboy_tetris/Material/images.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
+import 'package:sizer/sizer.dart';
 
-const _PLAYER_PANEL_PADDING = 6;
+double _PLAYER_PANEL_PADDING = 1.w;
 
 Size getBrikSizeForScreenWidth(double width) {
   return Size.square((width - _PLAYER_PANEL_PADDING) / GAME_PAD_MATRIX_W);
@@ -23,11 +24,10 @@ class PlayerPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("size : $size");
     return SizedBox.fromSize(
       size: size,
       child: Container(
-        padding: EdgeInsets.all(2),
+        //padding: EdgeInsets.all(2),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.black),
         ),
@@ -70,10 +70,10 @@ class _GameUninitialized extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             IconDragon(animate: true),
-            SizedBox(height: 16), ///Space between Dino and text
+            SizedBox(height: 2.h), ///Space between Dino and text
             Text(
               "Gameboy: Tetris DX",
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 12.sp),
             ),
           ],
         ),

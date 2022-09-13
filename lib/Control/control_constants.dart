@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
+import 'package:sizer/sizer.dart';
 
 class Constants {
-  static const double CONTROLLER_HEIGHT = 280;
+  //280
 
-  static const double CONTROLLER_PADDING_LEFT = 50;
+  static const Color SCREEN_BACKGROUND = Color(0xff9ead86);
 
-  static const double CONTROLLER_PADDING_RIGHT = 25;
+  static double CONTROLLER_PADDING_LEFT = 13.w;
 
-  static const Size DIRECTION_BUTTON_SIZE = const Size(40, 40);
+  static double CONTROLLER_PADDING_RIGHT = 6.5.w;
 
-  static const Size SYSTEM_BUTTON_SIZE = const Size(28, 28);
+  static Size DIRECTION_BUTTON_SIZE = Size(5.h, 5.h);
 
-  static const double DIRECTION_SPACE = 16;
+  static Size SYSTEM_BUTTON_SIZE = Size(3.h, 3.h);
+
+  static double DIRECTION_SPACE = 5.w;//16
 
   static const double ICON_SIZE = 16;
 

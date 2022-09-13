@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 //import 'package:gameboy_tetris/gamer/block.dart';
 import 'package:gameboy_tetris/main.dart';
 import 'package:gameboy_tetris/Material/audios.dart';
+import 'package:sizer/sizer.dart';
 
-///the height of game pad
-const GAME_PAD_MATRIX_H = 20;
+int GAME_PAD_MATRIX_H = 5.h.toInt();
 
 ///the width of game pad
-const GAME_PAD_MATRIX_W = 10;
+int GAME_PAD_MATRIX_W = 2.5.w.toInt();
+
 
 ///state of [GameControl]
 enum GameStates {
@@ -23,9 +24,11 @@ enum GameStates {
 }
 
 class Game extends StatefulWidget {
+  ///the height of game pad
+
   final Widget child;
 
-  const Game({Key? key, required this.child}) : super(key: key);
+  Game({Key? key, required this.child}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
