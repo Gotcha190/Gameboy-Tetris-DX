@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-//import 'package:gameboy_tetris/Engine/block.dart';
+import 'package:gameboy_tetris/Engine/block.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
-import 'package:gameboy_tetris/Material/briks.dart';
+import 'package:gameboy_tetris/Material/bricks.dart';
 import 'package:gameboy_tetris/Material/images.dart';
 import 'package:sizer/sizer.dart';
 
@@ -48,18 +48,17 @@ class _NextBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<List<int>> data = [List.filled(4, 0), List.filled(4, 0)];
-    //TODO: Blocks in status_panel
-    // final next = BLOCK_SHAPES[GameState.of(context).next.type]!;
-    // for (int i = 0; i < next.length; i++) {
-    //   for (int j = 0; j < next[i].length; j++) {
-    //     data[i][j] = next[i][j];
-    //   }
-    // }
+    final next = BLOCK_SHAPES[GameState.of(context).next.type]!;
+    for (int i = 0; i < next.length; i++) {
+      for (int j = 0; j < next[i].length; j++) {
+        data[i][j] = next[i][j];
+      }
+    }
     return Column(
       children: data.map((list) {
         return Row(
           children: list.map((b) {
-            return b == 1 ? const Brik.normal() : const Brik.empty();
+            return b == 1 ? const Brick.normal() : const Brick.empty();
           }).toList(),
         );
       }).toList(),

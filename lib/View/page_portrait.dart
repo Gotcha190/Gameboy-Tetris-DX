@@ -14,8 +14,9 @@ part 'page_land.dart';
 class PagePortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;/// Phone Size
-     //final size = Constants.SCREEN_SIZE;
+    final size = MediaQuery.of(context).size;
+
+    /// Phone Size
     final screenW = size.width * 0.7;
 
     return SizedBox.expand(
@@ -26,7 +27,7 @@ class PagePortrait extends StatelessWidget {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 60.h,//((screenW * 0.6)- 10) * 2  + 45 * 3,
+                height: 60.h, //((screenW * 0.6)- 10) * 2  + 45 * 3,
                 width: 100.w, //screenW + 45 * 2 + 8,
                 child: Stack(
                   alignment: Alignment.topCenter,
@@ -37,7 +38,8 @@ class PagePortrait extends StatelessWidget {
                       padding: EdgeInsets.only(bottom: 3.h),
                       alignment: Alignment.bottomCenter,
                       child: Text("GAME BOY",
-                          style: TextStyle(color: Color(0xFF557C7B), fontSize: 8.w)),
+                          style: TextStyle(
+                              color: Color(0xFF557C7B), fontSize: 8.w)),
                     ),
                   ],
                 ),

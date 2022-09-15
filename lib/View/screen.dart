@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
-import 'package:gameboy_tetris/Material/briks.dart';
+import 'package:gameboy_tetris/Material/bricks.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Material/material.dart';
 import 'package:sizer/sizer.dart';
@@ -10,8 +10,6 @@ import 'package:vector_math/vector_math_64.dart' as v;
 
 import 'player_panel.dart';
 import 'status_panel.dart';
-
-
 
 /// screen H : W;
 class Screen extends StatelessWidget {
@@ -37,8 +35,8 @@ class Screen extends StatelessWidget {
         child: Container(
           color: Constants.SCREEN_BACKGROUND,
           child: GameMaterial(
-            child: BrikSize(
-              size: getBrikSizeForScreenWidth(playerPanelWidth),
+            child: BrickSize(
+              size: getBrickSizeForScreenWidth(playerPanelWidth),
               child: Row(
                 children: <Widget>[
                   PlayerPanel(width: playerPanelWidth),

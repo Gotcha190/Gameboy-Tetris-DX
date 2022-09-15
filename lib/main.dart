@@ -37,11 +37,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          body: Sound(child: Game(child: KeyboardController(child: _HomePage()))),
+          body:
+              Sound(child: Game(child: KeyboardController(child: _HomePage()))),
         ),
       );
-    }
-    );
+    });
   }
 }
 

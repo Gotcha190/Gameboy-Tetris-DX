@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gameboy_tetris/Control/RoundButton.dart';
+import 'package:gameboy_tetris/Control/Button.dart';
 import 'package:gameboy_tetris/Control/ButtonDescription.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
@@ -15,6 +15,7 @@ class SystemButtonGroup extends StatelessWidget {
           Description(
             text: "SOUNDS",
             child: Button(
+                shape: CircleBorder(),
                 size: Constants.SYSTEM_BUTTON_SIZE,
                 color: Constants.SYSTEM_BUTTON_COLOR,
                 enableLongPress: false,
@@ -26,6 +27,7 @@ class SystemButtonGroup extends StatelessWidget {
           Description(
             text: "PAUSE/RESUME",
             child: Button(
+                shape: CircleBorder(),
                 size: Constants.SYSTEM_BUTTON_SIZE,
                 color: Constants.SYSTEM_BUTTON_COLOR,
                 enableLongPress: false,
@@ -37,6 +39,7 @@ class SystemButtonGroup extends StatelessWidget {
           Description(
             text: "RESET",
             child: Button(
+                shape: CircleBorder(),
                 size: Constants.SYSTEM_BUTTON_SIZE,
                 enableLongPress: false,
                 color: Constants.SYSTEM_BUTTON_RESET_COLOR,

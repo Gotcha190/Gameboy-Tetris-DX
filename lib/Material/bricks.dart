@@ -6,8 +6,8 @@ const _COLOR_NULL = Colors.black12;
 
 const _COLOR_HIGHLIGHT = Color(0xFF560000);
 
-class BrikSize extends InheritedWidget {
-  const BrikSize({
+class BrickSize extends InheritedWidget {
+  const BrickSize({
     Key? key,
     required this.size,
     required Widget child,
@@ -15,35 +15,35 @@ class BrikSize extends InheritedWidget {
 
   final Size size;
 
-  static BrikSize of(BuildContext context) {
-    final brikSize = context.dependOnInheritedWidgetOfExactType<BrikSize>();
-    assert(brikSize != null, "....");
-    return brikSize!;
+  static BrickSize of(BuildContext context) {
+    final brickSize = context.dependOnInheritedWidgetOfExactType<BrickSize>();
+    assert(brickSize != null, "....");
+    return brickSize!;
   }
 
   @override
-  bool updateShouldNotify(BrikSize old) {
+  bool updateShouldNotify(BrickSize old) {
     return old.size != size;
   }
 }
 
-///the basic brik for game panel
-class Brik extends StatelessWidget {
+///the basic brick for game panel
+class Brick extends StatelessWidget {
   final Color color;
 
-  const Brik._({Key? key, required this.color}) : super(key: key);
+  const Brick._({Key? key, required this.color}) : super(key: key);
 
-  const Brik.normal() : this._(color: _COLOR_NORMAL);
+  const Brick.normal() : this._(color: _COLOR_NORMAL);
 
-  const Brik.empty() : this._(color: _COLOR_NULL);
+  const Brick.empty() : this._(color: _COLOR_NULL);
 
-  const Brik.highlight() : this._(color: _COLOR_HIGHLIGHT);
+  const Brick.highlight() : this._(color: _COLOR_HIGHLIGHT);
 
   @override
   Widget build(BuildContext context) {
-    final width = BrikSize.of(context).size.width;
+    final width = BrickSize.of(context).size.width;
     return SizedBox.fromSize(
-      size: BrikSize.of(context).size,
+      size: BrickSize.of(context).size,
       child: Container(
         margin: EdgeInsets.all(0.05 * width),
         padding: EdgeInsets.all(0.1 * width),

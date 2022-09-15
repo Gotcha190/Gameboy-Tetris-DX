@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:gameboy_tetris/Control/RectangleButton.dart';
+import 'package:gameboy_tetris/Control/Button.dart';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'dart:math' as math;
+
 import 'package:sizer/sizer.dart';
+
+const ShapeBorder buttonShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.only(
+        bottomLeft: Radius.zero,
+        topLeft: Radius.circular(5),
+        bottomRight: Radius.zero,
+        topRight: Radius.circular(5)));
+
+Text buttonText = Text("▲",
+    style: TextStyle(color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp));
 
 class DirectionController extends StatelessWidget {
   @override
@@ -18,17 +29,14 @@ class DirectionController extends StatelessWidget {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Stack(alignment: Alignment.center, children: [
-                  Button(
-                      enableLongPress: false,
-                      size: Constants.DIRECTION_BUTTON_SIZE,
-                      onTap: () {
-                        Game.of(context).rotate();
-                      }),
-                  Text("▲",
-                      style: TextStyle(
-                          color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
-                ]),
+                Button(
+                    shape: buttonShape,
+                    text: buttonText,
+                    enableLongPress: false,
+                    size: Constants.DIRECTION_BUTTON_SIZE,
+                    onTap: () {
+                      Game.of(context).rotate();
+                    }),
               ],
             ),
             Row(
@@ -36,16 +44,13 @@ class DirectionController extends StatelessWidget {
               children: <Widget>[
                 Transform.rotate(
                   angle: math.pi * 1.5,
-                  child: Stack(alignment: Alignment.center, children: [
-                    Button(
-                        size: Constants.DIRECTION_BUTTON_SIZE,
-                        onTap: () {
-                          Game.of(context).left();
-                        }),
-                    Text("▲",
-                        style: TextStyle(
-                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
-                  ]),
+                  child: Button(
+                      shape: buttonShape,
+                      text: buttonText,
+                      size: Constants.DIRECTION_BUTTON_SIZE,
+                      onTap: () {
+                        Game.of(context).left();
+                      }),
                 ),
                 SizedBox(
                   width: Constants.DIRECTION_BUTTON_SIZE.width,
@@ -58,17 +63,14 @@ class DirectionController extends StatelessWidget {
                 ),
                 Transform.rotate(
                   angle: math.pi / 2,
-                  child: Stack(alignment: Alignment.center, children: [
-                    Button(
-                      size: Constants.DIRECTION_BUTTON_SIZE,
-                      onTap: () {
-                        Game.of(context).right();
-                      },
-                    ),
-                    Text("▲",
-                        style: TextStyle(
-                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
-                  ]),
+                  child: Button(
+                    shape: buttonShape,
+                    text: buttonText,
+                    size: Constants.DIRECTION_BUTTON_SIZE,
+                    onTap: () {
+                      Game.of(context).right();
+                    },
+                  ),
                 ),
               ],
             ),
@@ -77,17 +79,14 @@ class DirectionController extends StatelessWidget {
               children: <Widget>[
                 Transform.rotate(
                   angle: math.pi,
-                  child: Stack(alignment: Alignment.center, children: [
-                    Button(
-                      size: Constants.DIRECTION_BUTTON_SIZE,
-                      onTap: () {
-                        Game.of(context).down();
-                      },
-                    ),
-                    Text("▲",
-                        style: TextStyle(
-                            color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp)),
-                  ]),
+                  child: Button(
+                    shape: buttonShape,
+                    text: buttonText,
+                    size: Constants.DIRECTION_BUTTON_SIZE,
+                    onTap: () {
+                      Game.of(context).down();
+                    },
+                  ),
                 ),
               ],
             ),

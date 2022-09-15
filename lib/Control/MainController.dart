@@ -15,12 +15,12 @@ class GameController extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            flex:2,
+            flex: 2,
             child: Row(
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(
-                      left: Constants.CONTROLLER_PADDING_LEFT),
+                  padding:
+                      EdgeInsets.only(left: Constants.CONTROLLER_PADDING_LEFT),
                   child: DirectionController(),
                 ),
                 Spacer(flex: 1),

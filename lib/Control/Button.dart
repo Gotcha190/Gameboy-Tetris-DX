@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:gameboy_tetris/Control/control_constants.dart';
 
 class Button extends StatefulWidget {
+  final ShapeBorder shape;
   final Size size;
   final Widget? icon;
 
@@ -12,13 +13,17 @@ class Button extends StatefulWidget {
   final Color color;
   final bool enableLongPress;
 
+  final Text? text;
+
   const Button({
     Key? key,
+    required this.shape,
     required this.size,
     required this.onTap,
     this.icon,
     this.color = Constants.BUTTON_COLOR,
     this.enableLongPress = true,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -51,7 +56,7 @@ class _ButtonState extends State<Button> {
     return Material(
       color: _color,
       elevation: 2,
-      shape: CircleBorder(),
+      shape: widget.shape,
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTapDown: (_) async {
@@ -97,6 +102,7 @@ class _ButtonState extends State<Button> {
         },
         child: SizedBox.fromSize(
           size: widget.size,
+          child: Center(child: widget.text),
         ),
       ),
     );

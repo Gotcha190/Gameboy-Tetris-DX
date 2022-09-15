@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gameboy_tetris/Material/briks.dart';
+import 'package:gameboy_tetris/Material/bricks.dart';
 import 'package:gameboy_tetris/Material/images.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'package:sizer/sizer.dart';
 
-double _PLAYER_PANEL_PADDING = 1.w;
+double _PLAYER_PANEL_PADDING = 1.1.w;
 
-Size getBrikSizeForScreenWidth(double width) {
+Size getBrickSizeForScreenWidth(double width) {
   return Size.square((width - _PLAYER_PANEL_PADDING) / GAME_PAD_MATRIX_W);
 }
 
@@ -50,10 +50,10 @@ class _PlayerPad extends StatelessWidget {
         return Row(
           children: list.map((b) {
             return b == 1
-                ? const Brik.normal()
+                ? const Brick.normal()
                 : b == 2
-                    ? const Brik.highlight()
-                    : const Brik.empty();
+                    ? const Brick.highlight()
+                    : const Brick.empty();
           }).toList(),
         );
       }).toList(),
@@ -70,7 +70,9 @@ class _GameUninitialized extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             IconDragon(animate: true),
-            SizedBox(height: 2.h), ///Space between Dino and text
+            SizedBox(height: 2.h),
+
+            ///Space between Dino and text
             Text(
               "Gameboy: Tetris DX",
               style: TextStyle(fontSize: 12.sp),
