@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.gameboy_tetris"
-    android:versionCode="TODO"
-    android:versionName="TODO">
+    android:versionCode="1000"
+    android:versionName="1.0.0">
    <application
         android:label="GameBoy: Tetris DX"
         android:icon="@mipmap/ic_launcher">

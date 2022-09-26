@@ -14,32 +14,25 @@ part 'page_land.dart';
 class PagePortrait extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
-    /// Phone Size
-    final screenW = size.width * 0.7;
-
     return SizedBox.expand(
       child: Container(
         color: BACKGROUND_COLOR,
-        child: Padding(
-          padding: MediaQuery.of(context).padding,
+        child: SafeArea(
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 60.h, //((screenW * 0.6)- 10) * 2  + 45 * 3,
-                width: 100.w, //screenW + 45 * 2 + 8,
+                height: 60.h,
+                width: 100.w,
                 child: Stack(
-                  alignment: Alignment.topCenter,
+                  alignment: Alignment.bottomCenter,
                   fit: StackFit.loose,
                   children: [
-                    _ScreenDecoration(child: Screen(width: screenW)),
-                    Container(
-                      padding: EdgeInsets.only(bottom: 3.h),
-                      alignment: Alignment.bottomCenter,
+                    _ScreenDecoration(child: Screen(width: 70.w)),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 1.5.h),
                       child: Text("GAME BOY",
-                          style: TextStyle(
-                              color: Color(0xFF557C7B), fontSize: 8.w)),
+                            style: TextStyle(
+                                color: Color(0xFF557C7B), fontSize: 8.w)),
                     ),
                   ],
                 ),
@@ -70,8 +63,7 @@ class _ScreenDecoration extends StatelessWidget {
           top: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
           left: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
           right: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
-          bottom:
-              BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH * 1.5),
+          bottom: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH * 1.5),
         ),
       ),
 

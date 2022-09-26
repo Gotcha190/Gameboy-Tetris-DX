@@ -9,9 +9,7 @@ class GameController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      //height: Constants.CONTROLLER_HEIGHT,
-      //height: Constants.SCREEN_SIZE.height*0.12,
-      height: 35.h,
+      height: 33.h,
       child: Column(
         children: [
           Expanded(

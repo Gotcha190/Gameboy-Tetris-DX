@@ -3,37 +3,41 @@ part of 'page_portrait.dart';
 class PageLand extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    height -= MediaQuery.of(context).viewInsets.vertical;
     return SizedBox.expand(
       child: Container(
         color: BACKGROUND_COLOR,
-        child: Padding(
-          padding: MediaQuery.of(context).padding,
+        child: SafeArea(
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Expanded(
+              SizedBox(
+                width: 32.h,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Spacer(),
-                    SystemButtonGroup(),
+                    Expanded(child: SystemButtonGroup()),
                     Spacer(),
                     Padding(
-                      padding: const EdgeInsets.only(left: 40, bottom: 40),
-                      child: DirectionController(),
-                    )
+                      padding: EdgeInsets.only(left: 9.h),
+                      child: ABController(),
+                    ),
+                    Spacer(),
                   ],
                 ),
               ),
-              _ScreenDecoration(child: Screen.fromHeight(height * 0.8)),
-              Expanded(
+              SizedBox(
+                width: 35.h,
+                child: Screen.fromHeight(80.w),
+              ),
+              SizedBox(
+                width: 32.h,
                 child: Column(
                   children: <Widget>[
                     Spacer(),
-                    ABController(),
-                    SizedBox(height: 30),
+                    DirectionController(),
+                    Spacer(),
+                    //   SizedBox(height: 30),
                   ],
                 ),
               ),

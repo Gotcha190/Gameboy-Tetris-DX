@@ -74,7 +74,7 @@ class _GameUninitialized extends StatelessWidget {
 
             ///Space between Dino and text
             Text(
-              "Gameboy: Tetris DX",
+              "Gameboy: Tetris",
               style: TextStyle(fontSize: 12.sp),
             ),
           ],
