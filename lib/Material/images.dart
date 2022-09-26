@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import 'material.dart';
 
@@ -32,7 +33,10 @@ class Number extends StatelessWidget {
     digitalStr = digitalStr.padLeft(length, padWithZero ? "0" : " ");
     List<Widget> children = [];
     for (int i = 0; i < length; i++) {
-      children.add(Digital(int.tryParse(digitalStr[i]) ?? 0));
+      children.add(Digital(
+        int.tryParse(digitalStr[i]) ?? 0,
+        size: Size(1.5.h, 2.h),
+      ));
     }
     return Row(
       mainAxisSize: MainAxisSize.min,

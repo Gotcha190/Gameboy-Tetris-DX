@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
-        title: 'GameBoy: Tetris DX',
+        title: 'GameBoy: Tetris',
         navigatorObservers: [routeObserver],
         theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -44,8 +44,6 @@ class MyApp extends StatelessWidget {
     });
   }
 }
-
-double SCREEN_BORDER_WIDTH = 11.w;
 
 const BACKGROUND_COLOR = const Color(0xff009fd7);
 

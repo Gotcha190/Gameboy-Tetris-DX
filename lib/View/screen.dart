@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'package:gameboy_tetris/Material/bricks.dart';
-import 'package:gameboy_tetris/Control/control_constants.dart';
+import 'package:gameboy_tetris/constants.dart';
 import 'package:gameboy_tetris/Material/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:vector_math/vector_math_64.dart' as v;
@@ -21,12 +21,12 @@ class Screen extends StatelessWidget {
     required this.width,
   }) : super(key: key);
 
-  Screen.fromHeight(double height) : this(width: ((height - 6) / 2 + 6) / 0.6);
+  Screen.fromHeight(double height) : this(width: ((height - 6) / 2 + 6) / 0.5);
 
   @override
   Widget build(BuildContext context) {
     //play panel need 60%
-    final playerPanelWidth = 43.w;
+    final playerPanelWidth = 40.w;
     return Shake(
       shake: GameState.of(context).states == GameStates.drop,
       child: SizedBox(
@@ -40,10 +40,7 @@ class Screen extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   PlayerPanel(width: playerPanelWidth),
-                  SizedBox(
-                    width: width - playerPanelWidth,
-                    child: StatusPanel(),
-                  )
+                  Expanded(child: StatusPanel()),
                 ],
               ),
             ),

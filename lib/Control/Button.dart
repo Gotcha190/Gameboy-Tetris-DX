@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:gameboy_tetris/Control/control_constants.dart';
+import 'package:gameboy_tetris/constants.dart';
 
 class Button extends StatefulWidget {
   final ShapeBorder shape;

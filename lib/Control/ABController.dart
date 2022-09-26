@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Control/Button.dart';
-import 'package:gameboy_tetris/Control/control_constants.dart';
+import 'package:gameboy_tetris/constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'package:sizer/sizer.dart';
 

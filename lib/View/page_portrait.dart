@@ -7,7 +7,7 @@ import 'package:gameboy_tetris/Control/SystemButtonsController.dart';
 import 'package:gameboy_tetris/View/screen.dart';
 import 'package:sizer/sizer.dart';
 
-import '../Control/control_constants.dart';
+import '../constants.dart';
 
 part 'page_land.dart';
 
@@ -60,10 +60,10 @@ class _ScreenDecoration extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          top: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
-          left: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
-          right: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH),
-          bottom: BorderSide(color: Colors.black, width: SCREEN_BORDER_WIDTH * 1.5),
+          top: BorderSide(color: Colors.black, width: Constants.SCREEN_BORDER_WIDTH),
+          left: BorderSide(color: Colors.black, width: Constants.SCREEN_BORDER_WIDTH),
+          right: BorderSide(color: Colors.black, width: Constants.SCREEN_BORDER_WIDTH),
+          bottom: BorderSide(color: Colors.black, width: Constants.SCREEN_BORDER_WIDTH * 1.5),
         ),
       ),
 

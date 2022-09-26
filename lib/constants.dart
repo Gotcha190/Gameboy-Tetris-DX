@@ -5,6 +5,8 @@ import 'package:sizer/sizer.dart';
 class Constants {
   static const Color SCREEN_BACKGROUND = Color(0xff9ead86);
 
+  static double SCREEN_BORDER_WIDTH = 11.w;
+
   static double CONTROLLER_PADDING_LEFT = 13.w;
 
   static double CONTROLLER_PADDING_RIGHT = 6.5.w;

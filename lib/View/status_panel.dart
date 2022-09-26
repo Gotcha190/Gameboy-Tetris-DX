@@ -104,16 +104,20 @@ class _GameStatusState extends State<_GameStatus> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1.5.h,
-      width: 25.w,
+      padding: EdgeInsets.only(bottom: 0.5.h),
       child: Row(
         children: <Widget>[
-          IconSound(enable: GameState.of(context).muted),
+          IconSound(enable: GameState.of(context).muted, size: Size(2.h, 2.h)),
           SizedBox(width: 1.w),
-          IconPause(enable: GameState.of(context).states == GameStates.paused),
-          Spacer(),
+          IconPause(
+              enable: GameState.of(context).states == GameStates.paused,
+              size: Size(2.h, 2.h)),
+          //Spacer(),
           Number(number: _hour, length: 2, padWithZero: true),
-          IconColon(enable: _colonEnable),
+          IconColon(
+            enable: _colonEnable,
+            size: Size(0.5.h, 0.7.h),
+          ),
           Number(number: _minute, length: 2, padWithZero: true),
         ],
       ),

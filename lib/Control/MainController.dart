@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gameboy_tetris/Control/ABController.dart';
 import 'package:gameboy_tetris/Control/DirectionController.dart';
 import 'package:gameboy_tetris/Control/SystemButtonsController.dart';
-import 'package:gameboy_tetris/Control/control_constants.dart';
+import 'package:gameboy_tetris/constants.dart';
 import 'package:sizer/sizer.dart';
 
 class GameController extends StatelessWidget {

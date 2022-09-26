@@ -26,10 +26,7 @@ class PageLand extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                width: 35.h,
-                child: Screen.fromHeight(80.w),
-              ),
+              SizedBox(width: 35.h, child: Screen(width: 70.w)),
               SizedBox(
                 width: 32.h,
                 child: Column(

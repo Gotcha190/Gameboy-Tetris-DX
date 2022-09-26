@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:gameboy_tetris/Control/Button.dart';
-import 'package:gameboy_tetris/Control/control_constants.dart';
+import 'package:gameboy_tetris/constants.dart';
 import 'package:gameboy_tetris/Engine/game_engine.dart';
 import 'dart:math' as math;
 
 import 'package:sizer/sizer.dart';
 
-const ShapeBorder buttonShape = RoundedRectangleBorder(
+const ShapeBorder _buttonShape = RoundedRectangleBorder(
     borderRadius: BorderRadius.only(
         bottomLeft: Radius.zero,
         topLeft: Radius.circular(5),
         bottomRight: Radius.zero,
         topRight: Radius.circular(5)));
 
-Text buttonText = Text("▲",
+Text _buttonText = Text("▲",
     style: TextStyle(color: Constants.BUTTON_TEXT_COLOR, fontSize: 20.sp));
 
 class DirectionController extends StatelessWidget {
@@ -30,8 +30,8 @@ class DirectionController extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Button(
-                    shape: buttonShape,
-                    text: buttonText,
+                    shape: _buttonShape,
+                    text: _buttonText,
                     enableLongPress: false,
                     size: Constants.DIRECTION_BUTTON_SIZE,
                     onTap: () {
@@ -45,8 +45,8 @@ class DirectionController extends StatelessWidget {
                 Transform.rotate(
                   angle: math.pi * 1.5,
                   child: Button(
-                      shape: buttonShape,
-                      text: buttonText,
+                      shape: _buttonShape,
+                      text: _buttonText,
                       size: Constants.DIRECTION_BUTTON_SIZE,
                       onTap: () {
                         Game.of(context).left();
@@ -64,8 +64,8 @@ class DirectionController extends StatelessWidget {
                 Transform.rotate(
                   angle: math.pi / 2,
                   child: Button(
-                    shape: buttonShape,
-                    text: buttonText,
+                    shape: _buttonShape,
+                    text: _buttonText,
                     size: Constants.DIRECTION_BUTTON_SIZE,
                     onTap: () {
                       Game.of(context).right();
@@ -80,8 +80,8 @@ class DirectionController extends StatelessWidget {
                 Transform.rotate(
                   angle: math.pi,
                   child: Button(
-                    shape: buttonShape,
-                    text: buttonText,
+                    shape: _buttonShape,
+                    text: _buttonText,
                     size: Constants.DIRECTION_BUTTON_SIZE,
                     onTap: () {
                       Game.of(context).down();
